@@ -26,7 +26,7 @@ public class App extends Application {
 
         stage.setTitle("JK Streamer Suite");
         stage.setScene(scene);
-        stage.setResizable(false);
+        stage.setResizable(true);
         stage.show();
 
         Path path = Paths.get("UserData.json");
