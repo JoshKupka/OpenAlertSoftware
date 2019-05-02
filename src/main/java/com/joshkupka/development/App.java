@@ -7,6 +7,9 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 /**
  * JavaFX App
@@ -14,25 +17,29 @@ import java.io.IOException;
 public class App extends Application {
 
     private static Scene scene;
+    private Database database = new Database();
 
     @Override
-    public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("primary"));
+    public void start(Stage stage) throws Exception {
+        Parent root = FXMLLoader.load(getClass().getResource("primary.fxml"));
+        Scene scene = new Scene(root);
+
+        stage.setTitle("JK Streamer Suite");
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
-    }
 
-    static void setRoot(String fxml) throws IOException {
-        scene.setRoot(loadFXML(fxml));
-    }
+        Path path = Paths.get("UserData.json");
+        if(Files.exists(path)){
+            System.out.println("YES");
+        } else {
+            System.out.println("NO");
 
-    private static Parent loadFXML(String fxml) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
-        return fxmlLoader.load();
+            database.databaseInit();
+            database.putData("First-Run", true);
+        }
     }
-
     public static void main(String[] args) {
-        launch();
+        launch(args);
     }
-
 }
