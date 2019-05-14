@@ -4,9 +4,12 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.lang.reflect.Executable;
 import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 import com.github.philippheuer.credentialmanager.CredentialManager;
 import com.github.philippheuer.credentialmanager.CredentialManagerBuilder;
@@ -17,7 +20,9 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.web.WebView;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -25,6 +30,14 @@ import org.apache.commons.lang3.StringUtils;
 
 public class PrimaryController {
 
+
+    private final ExecutorService uiService = Executors.newSingleThreadExecutor();
+    @FXML
+    private ImageView profileImageView;
+    @FXML
+    private Label streamerTypeLabel;
+    @FXML
+    private Label usernameLabel;
     private Stage primaryStage;
     private Database database = new Database();
     private CredentialManager credentialManager = CredentialManagerBuilder.builder().build();
@@ -65,12 +78,12 @@ public class PrimaryController {
                 try (InputStream in = new URL(profileImageURL).openStream()) {
                     Files.copy(in, Paths.get("profileImage.png"));
                 }
-
+                displayData();
             } catch (Exception e) {
                 e.printStackTrace();
             }
         } else {
-
+            displayData();
         }
     }
 
@@ -98,6 +111,15 @@ public class PrimaryController {
     }
 
     private void displayData() {
+        streamerTypeLabel.setText(database.getData("Broadcaster-Type").toString());
+        usernameLabel.setText(database.getData("Display-Name").toString());
+        try {
+            FileInputStream resource = new FileInputStream(new File("profileImage.png"));
+            profileImageView.setImage(new Image(resource));
+            profileImageView.setVisible(true);
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
     }
 
     private String getUserData() {
