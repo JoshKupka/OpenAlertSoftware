@@ -33,7 +33,7 @@ public class App extends Application {
         stage.show();
 
         Path path = Paths.get("UserData.json");
-        if(Files.exists(path)){
+        if(Files.exists(path) && !(database.containsKey("First-Run"))){
             System.out.println("YES");
         } else {
             System.out.println("NO");
