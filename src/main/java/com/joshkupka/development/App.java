@@ -1,6 +1,7 @@
 package com.joshkupka.development;
 
 import javafx.application.Application;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -36,9 +37,13 @@ public class App extends Application {
             System.out.println("YES");
         } else {
             System.out.println("NO");
-
             database.databaseInit();
             database.putData("First-Run", true);
+            Stage popup = new Stage();
+            popup.setResizable(false);
+            popup.setTitle("Sign In");
+            popup.setScene(new Scene(FXMLLoader.load(getClass().getResource("signin.fxml"))));
+            popup.showAndWait();
         }
     }
     public static void main(String[] args) {
