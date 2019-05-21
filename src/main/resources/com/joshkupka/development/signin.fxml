@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -17,7 +18,7 @@
                   <Image url="@logo.png" />
                </image>
                <VBox.margin>
-                  <Insets top="44.0" />
+                  <Insets top="22.0" />
                </VBox.margin>
             </ImageView>
             <Label text="Open Alert Software">
@@ -28,12 +29,15 @@
                   <Font name="System Bold" size="27.0" />
                </font>
             </Label>
-            <ImageView fx:id="loginButtonImageView" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="loginButtonImageView" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#login" pickOnBounds="true" preserveRatio="true">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
                <image>
                   <Image url="@loginButton.png" />
                </image>
                <VBox.margin>
-                  <Insets />
+                  <Insets top="95.0" />
                </VBox.margin>
             </ImageView>
          </children>
