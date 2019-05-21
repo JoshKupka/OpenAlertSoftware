@@ -1,10 +1,7 @@
 package com.joshkupka.development;
 
-import com.github.philippheuer.credentialmanager.CredentialManager;
-import com.github.philippheuer.credentialmanager.CredentialManagerBuilder;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
-import javafx.scene.image.Image;
 
 import javafx.scene.image.ImageView;
 import javafx.scene.web.WebView;
@@ -12,15 +9,10 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import org.apache.commons.lang3.StringUtils;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 public class SignInMenuController {
 
@@ -32,7 +24,6 @@ public class SignInMenuController {
 
     private Stage primaryStage;
     private Database database = new Database();
-    private CredentialManager credentialManager = CredentialManagerBuilder.builder().build();
     private String url = "https://id.twitch.tv/oauth2/authorize?client_id=v2g4ds9qldblz50i4qic8zzxfsja1n&redirect_uri=http://localhost&response_type=token&scope=user:edit+bits:read+channel_check_subscription+channel_editor+channel_read+channel_subscriptions+chat:edit+chat:read";
     @FXML
     private void login() {
