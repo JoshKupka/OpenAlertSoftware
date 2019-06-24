@@ -7,12 +7,12 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="543.0" prefWidth="915.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.joshkupka.development.PrimaryController">
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0" prefWidth="915.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.joshkupka.development.PrimaryController">
     <children>
-        <MenuBar fx:id="menuBar" layoutY="2.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="915.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+        <MenuBar fx:id="menuBar" layoutY="2.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="915.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <menus>
                 <Menu mnemonicParsing="false" text="File">
                     <items>
@@ -31,33 +31,43 @@
                 </Menu>
             </menus>
         </MenuBar>
-        <AnchorPane layoutY="30.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="487.0" prefWidth="201.0" style="-fx-background-color: grey;" AnchorPane.bottomAnchor="29.0" AnchorPane.topAnchor="27.0">
+        <AnchorPane layoutY="308.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="223.0" prefWidth="201.0" style="-fx-background-color: #38858B;" AnchorPane.bottomAnchor="29.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="308.0">
             <children>
-                <BorderPane layoutY="4.0" prefHeight="196.0" prefWidth="200.0">
-                    <center>
-                        <ImageView fx:id="profileImageView" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" visible="false" BorderPane.alignment="CENTER" />
-                    </center>
-                    <top>
-                        <Label fx:id="streamerTypeLabel" text="STREAMER TYPE" BorderPane.alignment="CENTER" />
-                    </top>
-                    <bottom>
-                        <Label fx:id="usernameLabel" text="USERNAME" BorderPane.alignment="CENTER" />
-                    </bottom>
-                </BorderPane>
-                <VBox layoutY="201.0" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" prefHeight="286.0" prefWidth="201.0">
+                <VBox alignment="CENTER" layoutY="186.0" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" prefHeight="215.0" prefWidth="201.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                     <children>
-                        <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="201.0" text="Button" />
-                        <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="201.0" text="Button" />
-                        <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="201.0" text="Button" />
-                        <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="201.0" text="Button" />
-                        <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="201.0" text="Button" />
-                        <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="201.0" text="Button" />
+                        <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="201.0" text="Button" VBox.vgrow="NEVER" />
+                        <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="201.0" text="Button" VBox.vgrow="NEVER" />
+                        <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="201.0" text="Button" VBox.vgrow="NEVER" />
+                        <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="201.0" text="Button" VBox.vgrow="NEVER" />
+                        <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="201.0" text="Button" VBox.vgrow="NEVER" />
+                        <Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="201.0" text="Button" VBox.vgrow="NEVER" />
                     </children>
                 </VBox>
             </children>
         </AnchorPane>
-        <AnchorPane layoutX="201.0" layoutY="79.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="435.0" prefWidth="714.0" style="-fx-background-color: #c2d0e8;" AnchorPane.bottomAnchor="29.0" AnchorPane.leftAnchor="201.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="79.0" />
-      <AnchorPane layoutX="201.0" layoutY="27.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="52.0" prefWidth="714.0" style="-fx-background-color: #3e4551;" AnchorPane.leftAnchor="201.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="27.0" />
-      <AnchorPane layoutY="514.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="29.0" prefWidth="915.0" style="-fx-background-color: #021433;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+        <AnchorPane layoutX="201.0" layoutY="62.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="461.0" prefWidth="714.0" style="-fx-background-color: #FBFCE3;" AnchorPane.bottomAnchor="29.0" AnchorPane.leftAnchor="201.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="60.0" />
+      <AnchorPane layoutY="27.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="915.0" style="-fx-background-color: #56BCB9;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0" />
+      <AnchorPane layoutY="518.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="29.0" prefWidth="915.0" style="-fx-background-color: #E9874B;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+                  <Label fx:id="streamerTypeLabel" alignment="CENTER_RIGHT" layoutX="-5.0" layoutY="-1.0" prefHeight="29.0" prefWidth="922.0" text="STREAMER TYPE" textFill="#223345" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="0.0">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+         </children></AnchorPane>
+      <AnchorPane layoutX="-1.0" layoutY="60.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="204.0" prefWidth="201.0" style="-fx-background-color: #405E65;" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="60.0">
+         <children>
+                  <ImageView fx:id="profileImageView" fitHeight="204.0" fitWidth="201.0" pickOnBounds="true" preserveRatio="true" visible="false" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutY="263.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="46.0" prefWidth="201.0" style="-fx-background-color: #26A583;" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="263.0">
+         <children>
+                  <Label fx:id="usernameLabel" alignment="CENTER" layoutY="-3.0" prefHeight="53.0" prefWidth="201.0" text="USERNAME" textAlignment="CENTER" textFill="#223345" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <font>
+                  <Font name="System Bold" size="27.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
     </children>
 </AnchorPane>

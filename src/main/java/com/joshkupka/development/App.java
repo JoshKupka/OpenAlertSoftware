@@ -19,7 +19,7 @@ public class App extends Application {
         stage.setScene(scene);
         stage.setResizable(true);
         stage.setMinWidth(915);
-        stage.setMinHeight(543);
+        stage.setMinHeight(595);
         stage.show();
     }
     public static void main(String[] args) {

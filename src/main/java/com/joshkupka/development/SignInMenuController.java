@@ -24,7 +24,7 @@ public class SignInMenuController {
 
     private Stage primaryStage;
     private Database database = new Database();
-    private String url = "https://id.twitch.tv/oauth2/authorize?client_id=v2g4ds9qldblz50i4qic8zzxfsja1n&redirect_uri=http://localhost&response_type=token&scope=user:edit+bits:read+channel_check_subscription+channel_editor+channel_read+channel_subscriptions+chat:edit+chat:read";
+    private String url = "https://id.twitch.tv/oauth2/authorize?client_id=u0zcg4a56nt140dd4zmtp01vez42c8&redirect_uri=http://localhost&response_type=token&scope=user:edit+bits:read+channel_check_subscription+channel_editor+channel_read+channel_subscriptions+chat:edit+chat:read";
     @FXML
     private void login() {
         if (database.containsKey("First-Run") && !(database.containsKey("User-Data"))) {
@@ -50,8 +50,9 @@ public class SignInMenuController {
                     database.putData("Display-Name", displayName);
                 }
                 String broadcasterType = database.broadcasterType();
+                String broadcasterTypeCapOne = upperCaseFirst(broadcasterType);
                 if (!(database.containsKey("Broadcaster-Type"))) {
-                    database.putData("Broadcaster-Type", broadcasterType);
+                    database.putData("Broadcaster-Type", broadcasterTypeCapOne);
                 }
                 String profileImageURL = database.profileImageURL();
                 if (!(database.containsKey("profileImageURL"))) {
@@ -96,5 +97,15 @@ public class SignInMenuController {
         String apikey = database.getData("apiKey").toString();
         String userData = twitch.getUser(apikey).toString();
         return userData;
+    }
+
+    private static String upperCaseFirst(String value) {
+
+        // Convert String to char array.
+        char[] array = value.toCharArray();
+        // Modify first element in array.
+        array[0] = Character.toUpperCase(array[0]);
+        // Return string.
+        return new String(array);
     }
 }
